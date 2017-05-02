@@ -5,49 +5,24 @@
  */
 
 import React, { Component } from 'react';
+
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+    AppRegistry
 } from 'react-native';
 
-export default class DomotikApp extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+import App from './components/App.js';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+// console.ignoredYellowBox = [
+//     // https://github.com/facebook/react-native/issues/9093
+//     'Warning: You are manually calling a React.PropTypes validation',
+// ];
+
+class DomotikApp extends React.Component {
+    render() {
+        return (
+            <App/>
+        );
+    }
+}
 
 AppRegistry.registerComponent('DomotikApp', () => DomotikApp);
