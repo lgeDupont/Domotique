@@ -11,6 +11,7 @@ import {
   StyleSheet,
   ScrollView,
   StatusBar,
+  ListView,
   Image,
   Alert,
   Text,
@@ -27,8 +28,75 @@ class Status extends Component {
     this.state = {
       main_room_name : 'Salon',
       main_room_temp : '23°C',
+      secondary_rooms : [
+        {
+          "id": 0,
+          "name": "culpa",
+          "temp": "18°C"
+        },
+        {
+          "id": 10,
+          "name": "dolore",
+          "temp": "21°C"
+        },
+        {
+          "id": 30,
+          "name": "amet",
+          "temp": "18°C"
+        },
+        {
+          "id": 40,
+          "name": "nulla",
+          "temp": "20°C"
+        },
+        {
+          "id": 50,
+          "name": "sit",
+          "temp": "17°C"
+        },
+        {
+          "id": 60,
+          "name": "adipisicing",
+          "temp": "23°C"
+        },
+        {
+          "id": 70,
+          "name": "eu",
+          "temp": "18°C"
+        },
+        {
+          "id": 80,
+          "name": "do",
+          "temp": "21°C"
+        },
+        {
+          "id": 90,
+          "name": "cupidatat",
+          "temp": "15°C"
+        }
+      ],
     }
   }
+
+  componentWillMount(){
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+    this.setState({ds : ds})
+  }
+
+  OtherRooms() {
+  return this.state.secondary_rooms.map(function(room){
+    return(
+      <View key={room.id} style={styles.room}>
+        <View style={styles.main_room_header}>
+          <Text style={styles.room_names}>{room.name}</Text>
+        </View>
+        <View style={styles.main_room_temp}>
+          <Text style={{fontSize: 65, color: '#DBE9EE',}}>{room.temp}</Text>
+        </View>
+      </View>
+    )
+  })
+}
  
   render() {
     var root = this
@@ -54,6 +122,17 @@ class Status extends Component {
             <View style={styles.main_room_daynighttemp}><Text>🌙   19°C</Text></View>
           </View>
         </View>
+        <ListView contentContainerStyle={styles.otherrooms}
+          dataSource={this.state.ds.cloneWithRows(this.state.secondary_rooms)}
+          renderRow={(room) => <View key={room.id} style={styles.room}>
+                                    <View style={styles.main_room_header}>
+                                      <Text style={styles.room_names}>{room.name}</Text>
+                                    </View>
+                                    <View style={styles.main_room_temp}>
+                                      <Text style={{fontSize: 65, color: '#DBE9EE',}}>{room.temp}</Text>
+                                    </View>
+                                  </View>}
+        />
       </ScrollView></View>
     )
   }
@@ -124,8 +203,11 @@ const styles = StyleSheet.create({
   main_room_daynighttemp:{
     flex: 1,
   },
+  otherrooms: {
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
   room: {
-    flex : 1,
     height: 100,
     width: (width - 30)/2,
     margin : 5,
