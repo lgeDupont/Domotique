@@ -124,14 +124,15 @@ class Status extends Component {
         </View>
         <ListView contentContainerStyle={styles.otherrooms}
           dataSource={this.state.ds.cloneWithRows(this.state.secondary_rooms)}
-          renderRow={(room) => <View key={room.id} style={styles.room}>
-                                    <View style={styles.main_room_header}>
-                                      <Text style={styles.room_names}>{room.name}</Text>
-                                    </View>
-                                    <View style={styles.main_room_temp}>
-                                      <Text style={{fontSize: 65, color: '#DBE9EE',}}>{room.temp}</Text>
-                                    </View>
-                                  </View>}
+          renderRow={(room) => 
+            <View key={room.id} style={styles.room}>
+              <View style={styles.main_room_header}>
+                <Text style={styles.room_names}>{room.name}</Text>
+              </View>
+              <View style={styles.main_room_temp}>
+                <Text style={{fontSize: 65, color: '#DBE9EE',}}>{room.temp}</Text>
+              </View>
+            </View>}
         />
       </ScrollView></View>
     )
