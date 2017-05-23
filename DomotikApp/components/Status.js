@@ -33,48 +33,66 @@ class Status extends Component {
       secondary_rooms : [
         {
           "id": 0,
-          "name": "culpa",
-          "temp": "18°C"
+          "name": "minim",
+          "temp": "16°C",
+          "daytemp": "21°C",
+          "nighttemp": "21°C"
         },
         {
           "id": 10,
-          "name": "dolore",
-          "temp": "21°C"
+          "name": "aliqua",
+          "temp": "21°C",
+          "daytemp": "20°C",
+          "nighttemp": "25°C"
+        },
+        {
+          "id": 20,
+          "name": "commodo",
+          "temp": "18°C",
+          "daytemp": "22°C",
+          "nighttemp": "24°C"
         },
         {
           "id": 30,
-          "name": "amet",
-          "temp": "18°C"
+          "name": "magna",
+          "temp": "21°C",
+          "daytemp": "25°C",
+          "nighttemp": "23°C"
         },
         {
           "id": 40,
-          "name": "nulla",
-          "temp": "20°C"
+          "name": "voluptate",
+          "temp": "20°C",
+          "daytemp": "17°C",
+          "nighttemp": "20°C"
         },
         {
           "id": 50,
-          "name": "sit",
-          "temp": "17°C"
+          "name": "sint",
+          "temp": "21°C",
+          "daytemp": "15°C",
+          "nighttemp": "18°C"
         },
         {
           "id": 60,
-          "name": "adipisicing",
-          "temp": "23°C"
+          "name": "magna",
+          "temp": "18°C",
+          "daytemp": "23°C",
+          "nighttemp": "19°C"
         },
         {
           "id": 70,
-          "name": "eu",
-          "temp": "18°C"
+          "name": "esse",
+          "temp": "16°C",
+          "daytemp": "16°C",
+          "nighttemp": "23°C"
         },
         {
           "id": 80,
-          "name": "do",
-          "temp": "21°C"
-        },
-        {
-          "id": 90,
-          "name": "cupidatat",
-          "temp": "15°C"
+          "name": "amet",
+          "temp": "23°C",
+          "daytemp": "24°C",
+          "nighttemp": "19°C"
         }
       ],
     }
