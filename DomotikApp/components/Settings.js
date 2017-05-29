@@ -16,6 +16,8 @@ import {
   View
 } from 'react-native'
 
+import './UserAgent.js'
+import io from 'socket.io-client/dist/socket.io.js'
 
 var { height, width } = Dimensions.get('window')
 
@@ -26,6 +28,13 @@ class Settings extends Component {
     this.state = {
       addRoomDialog : false,
       configIpDialog : false,
+    }
+  }
+
+  componentWillUnmount(){
+    if(this.socket){
+      this.socket.close()
+      Alert.alert('Connection closed')
     }
   }
 

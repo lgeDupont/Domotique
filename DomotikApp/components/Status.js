@@ -19,6 +19,8 @@ import {
   View
 } from 'react-native'
 
+import './UserAgent.js'
+import io from 'socket.io-client/dist/socket.io.js'
 
 var { height, width } = Dimensions.get('window')
 
@@ -101,6 +103,13 @@ class Status extends Component {
   componentWillMount(){
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.setState({ds : ds})
+  }
+
+  componentWillUnmount(){
+    if(this.socket){
+      this.socket.close()
+      Alert.alert('Connection closed')
+    }
   }
 
   OtherRooms() {
